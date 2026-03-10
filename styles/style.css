@@ -2,10 +2,27 @@
 
 /* #COLORS */
 :root {
-  --accent: #79e882;
-  --accent-mid: #79e882cf;
-  --accent-light: #79e88241;
-  --accent-faint: #79e8822e;
+  --accent: #1f48ff;
+  --accent-mid: #1f48ffb8;
+  --accent-light: #1f48ff5b;
+  --accent-faint: #1f48ff41;
+}
+
+/* #FONTS */
+@font-face {
+  font-family: 'SymphonyPro';
+  src: url('../assets/Fonts/SymphonyPro-Bol.8d35489baeffda2dfe06b022.376829c9-d598-4630-a742-b2afac09d320.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+span.symphony-font {
+    font-family: 'SymphonyPro', serif !important;
+    text-transform: none !important;
+    font-size: 93px !important;
+    top: 4%;
+    z-index: 10;
+    line-height: 90px;
 }
 
 
