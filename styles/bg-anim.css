@@ -1,0 +1,25 @@
+#glow-circle {
+  position: fixed;
+top: 500px;
+  width: 900px;
+  height: 900px;
+  left: 400px;
+  transform: none; /* remove the centering */
+
+}
+
+#presentation, #bio, #skills {
+  background: transparent;
+}
+
+#glow-circle {
+  z-index: 0;
+}
+
+body::before {
+  z-index: 1; /* above glow but below content */
+}
+
+#glow-circle {
+  background: radial-gradient(circle, rgba(210, 120, 30, 0.35) 0%, transparent 65%);
+}
