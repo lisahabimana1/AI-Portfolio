@@ -1,65 +1,89 @@
-// script.js
+// ============================================================
+// PAPER.JS CANVAS SETUP
+// Uses Paper.js for vector graphics on #myCanvas element
+// ============================================================
 paper.setup("myCanvas");
 
-// Create a raster item:
+// Load profile image as a raster (pixel-based) element
 var raster = new paper.Raster("./assets/lisa-profile-pic.png");
-
 var loaded = false;
 
 raster.on("load", function () {
-	console.log("Image loaded");
 	loaded = true;
-	onResize();
+	onResize(); // trigger initial render once image is ready
 });
 
-raster.visible = false;
+raster.visible = false; // hidden — only used as a color source
 var lastPos = paper.view.center;
 
+// ============================================================
+// MOVE HANDLER — called when mouse moves over a rectangle
+// Splits the rectangle into 2 smaller ones filled with the
+// average color of the image at that region → creates a
+// progressive pixelation / mosaic reveal effect
+// ← TO REVEAL FASTER: lower the distance threshold (line below)
+//   or increase split frequency by reducing rectangle size
+// ============================================================
 function moveHandler(event) {
 	if (!loaded) return;
-	if (lastPos.getDistance(event.point) < 5) return;
+
+	// ← SPEED TWEAK: lower number = reacts to smaller movements = faster reveal
+	if (lastPos.getDistance(event.point) < 1) return;
 	lastPos = event.point;
 
 	var size = this.bounds.size.clone();
 	var isLandscape = size.width > size.height;
 
+	// Split rectangle in half — landscape splits horizontally, portrait vertically
 	size.width = Math.ceil(size.width / (isLandscape ? 2 : 1));
 	size.height = Math.ceil(size.height / (isLandscape ? 1 : 2));
 
+	// First half — filled with average color from image at this region
 	var path1 = new paper.Path.Rectangle({
 		point: this.bounds.topLeft,
 		size: size,
-		onMouseMove: moveHandler,
+		onMouseMove: moveHandler, // each new rect also listens → recursive subdivision
 	});
 	path1.fillColor = raster.getAverageColor(path1);
 
+	// Second half — same logic for the other half
 	var path2 = new paper.Path.Rectangle({
 		point: isLandscape ? this.bounds.topCenter : this.bounds.leftCenter,
-		size: {
-			width: Math.floor(size.width),
-			height: Math.floor(size.height),
-		},
+		size: { width: Math.floor(size.width), height: Math.floor(size.height) },
 		onMouseMove: moveHandler,
 	});
 	path2.fillColor = raster.getAverageColor(path2);
 
-	this.remove();
+	this.remove(); // remove the parent rect — replaced by the two children
 }
 
+// ============================================================
+// ON RESIZE — resets canvas and creates one big starting rectangle
+// covering the full viewport, filled with the image's avg color
+// This is the "blank state" before the user starts moving the mouse
+// ============================================================
 function onResize(event) {
 	if (!loaded) return;
-	console.log("Resizing view");
 	paper.project.activeLayer.removeChildren();
-
 	paper.view.size = new paper.Size(window.innerWidth, window.innerHeight);
-
 	raster.fitBounds(paper.view.bounds, true);
 
-	new paper.Path.Rectangle({
-		rectangle: paper.view.bounds,
-		fillColor: raster.getAverageColor(paper.view.bounds),
-		onMouseMove: moveHandler,
-	});
+	// ← Grid of starting tiles instead of one big rectangle
+	// Increase cols for smaller tiles = faster reveal
+	var cols = 10;
+	var tileW = paper.view.size.width / cols;
+	var rows = Math.ceil(paper.view.size.height / tileW);
+
+	for (var x = 0; x < cols; x++) {
+		for (var y = 0; y < rows; y++) {
+			var rect = new paper.Path.Rectangle({
+				point: new paper.Point(x * tileW, y * tileW),
+				size: new paper.Size(tileW, tileW),
+				onMouseMove: moveHandler,
+			});
+			rect.fillColor = raster.getAverageColor(rect);
+		}
+	}
 }
 
 window.addEventListener("resize", onResize);
@@ -137,16 +161,16 @@ const textmoji = [
 // Function to generate a random green color
 function getRandomGreen() {
 	const greenPinkBlackshades = [
-		"#90EE90", // LightGreen
-		"#98FB98", // PaleGreen
-		"#A9DFBF", // LightSeaGreen
-		"#B0E57C", // MediumSpringGreen
-		"#7FFF00", // Chartreuse (light green)
-		"#C1E1C1", // LightMintGreen
-		"#32CD32", // LimeGreen (still light but a little brighter)
-		"#FF1493", // DeepPink (Magenta Pink)
-		"#FF69B4", // HotPink (Magenta Pink)
+		"#1f48ff", // Blue accent
+		"#1f48ffb8", // accent-mild
+		"#1f48ff5b", // accent-light
+		"#1f48ff41", // accent-faint
+		"#fbf4e9", // Orange/beige
 		"#000000", // Black
+		"#1f48ff", // Blue accent
+		"#1f48ffb8", // accent-mild
+		"#1f48ff", // Blue accent
+		"#1f48ffb8", // accent-mild
 	];
 	return greenPinkBlackshades[
 		Math.floor(Math.random() * greenPinkBlackshades.length)
