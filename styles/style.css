@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Short+Stack&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* #COLORS */
 :root {
@@ -29,7 +29,7 @@ span.symphony-font {
 /* #region General body styling */
 body {
     margin: 0;
-    font-family: "Host Grotesk", sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-color: #fff9d012;
 }
 
@@ -69,7 +69,7 @@ a,
 li,
 label,
 figure {
-    font-family: "Host Grotesk", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 
@@ -426,7 +426,7 @@ span.tooltip_img:hover {
 }
 
 #bio .bio-content span {
-    color: #000000;
+    color: #FFFFFF !important;
     background-color: var(--accent-mid);
     font-size: 14px;
     padding: 2px 8px;
@@ -721,7 +721,7 @@ p.narrow-p  {
 
 
 .step h5 span {
-    color: #000000;
+    color: #ffffff;
     background-color: var(--accent-mid);
     font-size: 12px;
     padding: 2px 8px;
