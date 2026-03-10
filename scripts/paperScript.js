@@ -158,8 +158,9 @@ const textmoji = [
 	"｡◕‿◕｡",
 ];
 
-// Function to generate a random green color
-function getRandomGreen() {
+// Function to generate a random color
+// Used to colorize the textmoji on click
+function getRandomColor() {
 	const greenPinkBlackshades = [
 		"#1f48ff", // Blue accent
 		"#1f48ffb8", // accent-mild
@@ -177,10 +178,16 @@ function getRandomGreen() {
 	];
 }
 
+// ============================================================
+// CLICK HANDLER — on every click, spawns a random greeting word
+// and a textmoji at random positions on the canvas
+// Both fade out after 2 seconds via tween opacity animation
+// ============================================================
+
 document.addEventListener("click", function (event) {
 	const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 	const emoji = textmoji[Math.floor(Math.random() * textmoji.length)];
-	const greenColor = getRandomGreen();
+	const greenColor = getRandomColor();
 
 	// greeting text
 	const greetingText = new paper.PointText({
@@ -212,6 +219,12 @@ document.addEventListener("click", function (event) {
 	greetingText.tween({ opacity: 0 }, 2000);
 	emojiText.tween({ opacity: 0 }, 2000);
 });
+
+/* 
+// DISABLED — alternative click interaction
+// Originally showed alternating "let's code" images on click
+// Kept for reference — press R/Backspace/Delete to clear images
+*/
 
 /* 
 // Let's work CTA
