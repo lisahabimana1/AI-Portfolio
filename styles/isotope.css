@@ -1,5 +1,14 @@
 * { box-sizing: border-box; }
 
+/* #COLORS */
+:root {
+  --accent: #1f48ff;
+  --accent-mid: #1f48ffb8;
+  --accent-light: #1f48ff5b;
+  --accent-faint: #1f48ff41;
+}
+
+
 body { font-family: sans-serif; }
 
 .checkbox-group{
@@ -28,7 +37,7 @@ input[type="checkbox"] {
 
 /* Checked checkbox */
 input[type="checkbox"]:checked {
-  border-color: #79e883;
+  border-color: var(--accent);
   position: relative;
 }
 
@@ -61,8 +70,8 @@ input[type="checkbox"]:checked::after {
 
 .button:hover {
 
-  background-color: #79e883;
-  color: black;
+  background-color: var(--accent);
+  color: rgb(255, 255, 255);
   cursor: crosshair;
 }
 

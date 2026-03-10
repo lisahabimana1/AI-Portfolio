@@ -19,8 +19,9 @@
 span.symphony-font {
     font-family: 'SymphonyPro', serif !important;
     text-transform: none !important;
-    font-size: 93px !important;
-    top: 4%;
+    letter-spacing: 0 !important;
+    font-size: 110px !important;
+    top: 6%;
     z-index: 10;
     line-height: 90px;
 }
@@ -48,7 +49,7 @@ body::before {
 }
 
 html body {
-    background-color: rgb(252, 252, 244);
+    background-color: #fbf4e9;
   }
 
 a {
@@ -125,22 +126,22 @@ html {
     text-decoration: none;
     color: #000;
     font-weight: bold;
+     transition: color 0.2s ease; 
 }
 
 .menu-item-start a:hover,
 .menu-item-end a:hover {
-    color: #000000;
+    color: var(--accent);
     cursor: crosshair;
-    background-color: rgba(255, 255, 255, 0.899);
-    text-decoration: underline;
     border-radius: 0.5em;
+   
 }
 
 .menu-layout li.active a {
-    color: #000000;
+    color: var(--accent);
     cursor: crosshair;
-    background-color: rgba(255, 255, 255, 0.899);
-    text-decoration: underline;
+    background-color: #fbf4e9;
+    text-decoration: none;
     border-radius: 0.5em;
 }
 
@@ -226,23 +227,25 @@ li.menu-item-end.m-projects a {
 }
 
 #name-cta.active {
-    color: black;
+    color: var(--accent);
 }
 
 
 #name-cta h1 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.4s ease; 
 
 }
 
 #name-cta h1 a:hover {
-    text-decoration: underline;
     cursor: crosshair;
+    color: var(--accent-light);
+
 
 }
 
-#name-cta h1 span {
+#name-cta h1 a#play-cta span {
 font-size: 13px;
 text-transform: uppercase;
 vertical-align: top;
@@ -362,7 +365,7 @@ span.tooltip_img {
 
 span.tooltip_img:hover {
     text-decoration: none;
-    border-bottom: 3px dashed var(--accent-mid); 
+    border-bottom: 2px dashed var(--accent-mid); 
     padding-bottom: -5px !important;
     margin-bottom: -5px !important;
     cursor: crosshair;
@@ -444,7 +447,7 @@ span.tooltip:nth-child(1), #see-less > p:nth-child(1) {
 
 span.tooltip:nth-child(1):hover, #see-less > p:nth-child(1):hover {
     font-weight: bold;
-    border-bottom: 3px dashed var(--accent-mid); 
+    border-bottom: 2px dashed var(--accent-mid); 
     cursor: crosshair;
 }
 
@@ -461,7 +464,7 @@ span.tooltip:nth-child(1):hover, #see-less > p:nth-child(1):hover {
 
 #bio a:hover {
     font-weight: bold;
-    border-bottom: 3px dashed var(--accent-mid); 
+    border-bottom: 2px dashed var(--accent-mid); 
     cursor: crosshair;
 }
 
@@ -675,7 +678,7 @@ article {
 
 .step-content .p-description a:hover {
     font-weight: bold;
-    border-bottom: 3px dashed var(--accent-mid); 
+    border-bottom: 2px dashed var(--accent-mid); 
     cursor: crosshair;
 }
 
@@ -811,7 +814,7 @@ figure.sticky {
   
   /* Checked checkbox */
   .checkbox-group2 input[type="checkbox"]:checked {
-    border-color: #79e883;
+    border-color:var(--accent);
     position: relative;
   }
   
@@ -880,11 +883,11 @@ section.c-layout {
     padding-bottom: 0;
     line-height: 1; 
     display: inline-block;
+     transition: color 0.2s ease; 
 }
 
 .internship-cta p a:hover {
-    font-weight: bold;
-    border-bottom: 3px dashed var(--accent-mid); 
+    border-bottom: 2px dashed var(--accent-mid); 
     cursor: crosshair;
 }
 
@@ -892,6 +895,7 @@ section.c-layout {
 
 .internship-cta span {
     color: var(--accent);
+    transition: color 0.2s ease; 
 }
 
 
@@ -941,11 +945,11 @@ footer {
 }
 
 .contact-layout a:hover {
-    color: #000000;
+    color: var(--accent);
     cursor: crosshair;
-    background-color: rgba(255, 255, 255, 0.899);
-    text-decoration: underline;
-    border-radius: 0.35em;
+    border-radius: 0.5em;
+    cursor: crosshair;
+    background-color:#fbf4e9;
 }
 
 .contact-layout .empty-column {

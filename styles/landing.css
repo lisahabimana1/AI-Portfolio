@@ -7,6 +7,12 @@
     font-optical-sizing: auto;
 }
 
+:root {
+  --accent: #1f48ff;
+  --accent-mid: #1f48ffb8;
+  --accent-light: #1f48ff5b;
+  --accent-faint: #1f48ff41;
+}
 
 #myCanvas {
     position: fixed; 
@@ -62,7 +68,7 @@ a:hover {
     cursor: crosshair;
     text-decoration: none;
     border-radius: 0.5em;
-    border-bottom: 3px dashed #79e882cf; 
+    border-bottom: 2px dashed var(--accent); 
     cursor: crosshair;
 }
 
