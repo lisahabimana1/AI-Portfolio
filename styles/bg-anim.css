@@ -23,6 +23,18 @@
   pointer-events: none;
 }
 
+#profile-pic {
+  position: fixed;
+  top: 400px;        /* adjust to taste */
+  left: 50px;        /* adjust to taste */
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  pointer-events: none;
+}
+
 #presentation, #bio, #skills {
   background: transparent;
 }
