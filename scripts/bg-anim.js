@@ -36,16 +36,6 @@ window.addEventListener("scroll", () => {
 	);
 
 	console.log("circle2 found:", circle2);
-
-	// ── PROFILE PIC ────────────────────────────────────────────────
-	const scale3 = 1 - clampedProgress * 0.85; // shrink amount, mirrors circle 1
-	const opacity3 = 1 - clampedProgress * 0.9; // fade amount
-	const pic = document.getElementById("profile-pic");
-	if (pic) {
-		pic.style.width = `${300 * scale3}px`; // 300 = base width in CSS
-		pic.style.height = `${300 * scale3}px`; // 300 = base height in CSS
-		pic.style.opacity = opacity3;
-	}
 });
 
 // Also trigger once on page load to set initial state

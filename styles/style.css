@@ -850,13 +850,14 @@ figure.sticky {
 
 
 .c-layout {
-    border: 5px solid rgba(152, 213, 253, 0);
-    height: calc(100vh - 50px);
-    margin-top: 50px;
-    box-sizing: border-box;
-    background-color: rgba(236, 255, 255, 0);
-    display: flex;
-    flex-direction: column;
+  border: 5px solid rgba(152, 213, 253, 0);
+  height: auto;              /* ← was calc(100vh - 50px) */
+  min-height: calc(100vh - 50px); /* keeps it tall on desktop but doesn't force it */
+  margin-top: 50px;
+  box-sizing: border-box;
+  background-color: rgba(236, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
 }
 
 #contact {
@@ -1301,7 +1302,7 @@ footer {
     }
     
     footer {
-        bottom: 0;
+        bottom: 0 !important;
     }
     
     main {
@@ -1618,7 +1619,7 @@ footer {
   
     #contact.c-layout {
         padding-bottom: 0 !important;
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
         min-height: auto !important;
         height: auto !important;
     }
@@ -1691,12 +1692,14 @@ footer {
 
     /* ➔➔➔➔ CONTACT */
 
-    .c-layout {
-        height: 80vh;
+  .c-layout {
+    height: auto !important;  /* was 80vh — was overriding the fix above */
+    min-height: unset !important;
     }
 
     #contact {
-        margin-top: 50%;
+        margin-top: 10%;
+        margin-bottom: 0 !important;
     }
 
     .internship-cta {
@@ -1800,13 +1803,14 @@ footer {
     }
 
     /* ➔➔➔➔ CONTACT 390 */
-    .c-layout {
-        height: 80vh;
-    }
 
-    #contact {
-        margin-top: 50%;
-    }
+  .c-layout {
+    height: auto !important;
+  }
+
+  #contact {
+    margin-top: 10% !important;
+  }
 
     #contact.c-layout {
         padding-bottom: 10px !important;
