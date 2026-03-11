@@ -430,6 +430,7 @@ span.tooltip_img:hover {
 #bio h3 {
     font-size: 30px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 
@@ -572,6 +573,11 @@ color:  var(--accent);
 }
 
 
+.checkbox-group  {
+text-transform: uppercase;
+}
+
+
 
 .row-center {
     flex-direction: row;
@@ -673,6 +679,14 @@ article {
     filter: saturate(1.2);
 }
 
+.p-description H3{
+text-transform: uppercase;
+}
+
+.p-description H3 span{
+color:var(--accent);
+}
+
 
 .step-content .p-description a {
     text-decoration: none;
@@ -763,6 +777,7 @@ figure.sticky {
 .checkbox-group2 .active-filter {
     font-weight: bold;
     font-size: 30px;
+    
 }
 
 .checkbox-group2 .unactive-filter {
@@ -1805,7 +1820,11 @@ footer {
     .checkbox-group {
         text-align: right;
         font-size: 18px !important;
+
     }
+
+
+    
 
     .ct-h-3 {
         width: 100%;
