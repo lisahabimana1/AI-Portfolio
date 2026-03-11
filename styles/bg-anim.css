@@ -1,25 +1,37 @@
 #glow-circle {
   position: fixed;
-top: 500px;
+  top: 100px;
   width: 900px;
   height: 900px;
-  left: 400px;
-  transform: none; /* remove the centering */
+  left: 100px;
+  transform: none;
+  background: radial-gradient(circle, rgba(210, 120, 30, 0.55) 0%, transparent 65%);
+   z-index: 2;
+  pointer-events: none; /* so it doesn't block clicks */
+}
 
+#glow-circle-2 {
+  position: fixed;
+  top: 380px;      
+  left: 300px;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  transform: none;
+  background: radial-gradient(circle, rgba(31, 72, 255, 0.6) 0%, transparent 65%); 
+  z-index: 4;    
+  pointer-events: none;
 }
 
 #presentation, #bio, #skills {
   background: transparent;
 }
 
-#glow-circle {
-  z-index: 0;
+#scrolly-side, #contact, footer {
+  background: transparent;
 }
+
 
 body::before {
-  z-index: 1; /* above glow but below content */
-}
-
-#glow-circle {
-  background: radial-gradient(circle, rgba(210, 120, 30, 0.55) 0%, transparent 65%);
+  z-index: 3; /* keep the grain texture above the glows */
 }
