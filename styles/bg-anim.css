@@ -1,3 +1,8 @@
+    #skills-isotope, #scrolly-side, #contact, footer, #bio, #skills {
+        z-index: 6 !important;
+    }
+
+
 #glow-circle {
   position: fixed;
   top: 100px;
@@ -37,7 +42,29 @@
 }
 
 
+.pull-quote {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    max-width: 100%;
+    color:var(--accent);
+}
 
+.cta-details {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 2;
+
+}
+
+.cta-body {
+    font-size: 16px;
+}
 
 
 
@@ -58,9 +85,11 @@ body::before {
     margin-top: 20%;
 }
 
+
+
 @media (max-width: 932px) {
 
-    
+
 
     #skills-isotope, #scrolly-side, #contact, footer, #bio, #skills {
         z-index: 5 !important;

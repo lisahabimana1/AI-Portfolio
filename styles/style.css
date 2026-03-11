@@ -878,7 +878,7 @@ section.c-layout {
 }
 
 .internship-cta p a{
-    color: #000000;
+    color: var(--accent);
     text-decoration: none;
     border-bottom: 1px solid black; 
     padding-bottom: 0;
