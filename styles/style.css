@@ -1113,8 +1113,17 @@ footer {
 @media (max-width: 932px) {
 
     /* ➔➔➔➔ PRESENTATION  */
-    #name-cta h1 span {
+
+    #name-cta h1 {
+        top: 3%;
+    }
+
+    #name-cta h1 a#play-cta {
         display: none;   
+    }
+
+    span.symphony-font {
+        font-size: 90px !important;
     }
     
     /* ➔➔➔➔ BIO  */
@@ -1644,7 +1653,7 @@ footer {
     /* ➔➔➔➔ Presentation */
     #name-cta h1 {
         font-size: 45px;
-        top: 30px;
+        top: 10px;
     }
 
     #name-cta:not(.active) {

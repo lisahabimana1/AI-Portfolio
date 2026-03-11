@@ -58,13 +58,53 @@ body::before {
     margin-top: 20%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 932px) {
+
+    
+
+    #skills-isotope, #scrolly-side, #contact, footer, #bio, #skills {
+        z-index: 5 !important;
+    }
+
   #profile-pic {
     left: 5%;
-    bottom: 60vh;
+    bottom: 30vh;
     width: 25vw;
     height: 25vw;
   }
+  /* ➔➔➔ CONTACT */
+  .c-layout {
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  #contact.c-layout {
+    min-height: unset !important;
+    height: auto !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 0 !important;
+  }
+  .internship-cta {
+    max-width: 50%;
+  }
+
+
+  #glow-circle {
+   z-index: 0 !important;
+
+}
+
+#glow-circle-2 {
+   z-index: 0;
+}
+
+
+  
+}
+
+
+@media (max-width: 800px) {
+
   /* ➔➔➔ CONTACT */
   .c-layout {
     height: auto !important;
