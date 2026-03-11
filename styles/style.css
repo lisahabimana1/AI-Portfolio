@@ -282,6 +282,12 @@ margin-left: 2px;
     color:var(--accent-mid);
 }
 
+#about-text p span {
+    color:var(--accent) !important;
+    font-weight: 500;
+}
+
+
 
 #about-text p {
     text-align: left;
