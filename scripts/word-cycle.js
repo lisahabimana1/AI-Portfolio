@@ -2,7 +2,6 @@ const multilingualWords = [
 	{ text: "multilingual", lang: "EN" },
 	{ text: "multilingue", lang: "FR" },
 	{ text: "meertalig", lang: "NL" },
-	{ text: "multilingüe", lang: "ES" },
 ];
 
 let wordIndex = 0;
