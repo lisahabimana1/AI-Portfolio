@@ -140,7 +140,7 @@ html {
 .menu-layout li.active a {
     color: var(--accent);
     cursor: crosshair;
-    background-color: #fbf4e9;
+    background-color:#fcedd5;
     text-decoration: none;
     border-radius: 0.5em;
 }
@@ -1376,7 +1376,7 @@ footer {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(255, 249, 208, 0.95);
+        background-color: var(--accent);
         backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
@@ -1417,7 +1417,7 @@ footer {
     .menu-layout li a {
         font-size: 2rem;
         font-weight: bold;
-        color: #000;
+        color: #fcedd5;
         text-decoration: none;
         padding: 1rem;
         display: inline-block;
@@ -1448,6 +1448,7 @@ footer {
         height: 25px;
         cursor: crosshair;
         z-index: 1001;
+        color: #fcedd5;
     }
     
     .hamburger-icon span {
@@ -1479,7 +1480,7 @@ footer {
     .hamburger-icon.active span:nth-child(1) {
         top: 10px;
         transform: rotate(135deg);
-        background-color: var(--accent);
+        background-color:  #fcedd5;
     }
     
     .hamburger-icon.active span:nth-child(2) {
@@ -1490,7 +1491,7 @@ footer {
     .hamburger-icon.active span:nth-child(3) {
         top: 10px;
         transform: rotate(-135deg);
-        background-color: var(--accent);
+        background-color: #fcedd5;
     }
     
     
